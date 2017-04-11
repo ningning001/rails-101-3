@@ -26,8 +26,9 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+
   end
-  
+
   def update
 
     if @group.update(group_params)
@@ -76,6 +77,8 @@ class GroupsController < ApplicationController
 
      if current_user != @group.user
        redirect_to root_path, alert: "You have no permission."
+     end
+   end
 
 def group_params
  params.require(:group).permit(:title, :description)
