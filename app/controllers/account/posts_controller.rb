@@ -3,7 +3,7 @@ class Account::PostsController < ApplicationController
   def index
     @posts = current_user.posts
   end
-end
+
 def new
     @group = Group.find(params[:group_id])
     @post = Post.new
@@ -28,4 +28,6 @@ def new
   def post_params
     params.require(:post).permit(:content)
   end
+
+
 end
