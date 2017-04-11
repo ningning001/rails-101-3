@@ -27,6 +27,7 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+  
   def update
 
     if @group.update(group_params)
